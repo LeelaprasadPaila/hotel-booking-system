@@ -1,4 +1,4 @@
-# 🏨 Luxury Hotel Booking System
+# 🏨 Hotel Booking System
 
 A modern and responsive **Flask-based Hotel Booking System** that provides a complete hotel management experience. The application features an elegant luxury hotel landing page with room booking, restaurant ordering, payment processing, and booking records through a clean and user-friendly interface.
 
@@ -9,14 +9,10 @@ A modern and responsive **Flask-based Hotel Booking System** that provides a com
 ![Luxury Hotel Booking System](static/images/homepage.png)
 
 ---
+## 🔗 Project Links
 
-## 🔗 Project Repository
-
-**GitHub Repository**
-
-https://github.com/your-username/luxury-hotel-booking-system
-
-> Replace the above URL with your actual GitHub repository link.
+- **Live Demo:** https://leelaprasadpaila.github.io/hotel-booking-system/
+- **GitHub Repository:** https://github.com/LeelaprasadPaila/hotel-booking-system/
 
 ---
 
