@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurelia Grand Hotel - Luxury Escape</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-ring"></div>
+            <span>AURELIA</span>
+        </div>
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-crown"></i>
+                <span>Aurelia <b>Grand</b></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" class="nav-link active" data-section="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-section="booking">Book Now</a></li>
+                <li><a href="#" class="nav-link" data-section="rooms">Rooms</a></li>
+                <li><a href="#" class="nav-link" data-section="restaurant">Dining</a></li>
+                <li><a href="#" class="nav-link" data-section="payment">Payment</a></li>
+                <li><a href="#" class="nav-link" data-section="records">Records</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="section active">
+        <div class="hero">
+            <div class="hero-slider">
+                <div class="slide slide-1 active"></div>
+                <div class="slide slide-2"></div>
+                <div class="slide slide-3"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">Luxury • Comfort • Signature Service</div>
+                <h1>Where golden sunsets meet <span>exceptional stays</span></h1>
+                <p>Discover a refined hotel experience with elegant suites, rooftop dining, and thoughtful service designed around your every moment.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-gold" data-section="booking">Reserve Your Escape <i class="fas fa-arrow-right"></i></a>
+                    <a href="#" class="btn-outline" data-section="rooms">Explore Suites</a>
+                </div>
+                <div class="hero-card">
+                    <div>
+                        <strong>Tonight's highlight</strong>
+                        <p>Sunset terrace dinner with a private city view.</p>
+                    </div>
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
+            <div class="hero-scroll">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat">
+                <i class="fas fa-bed"></i>
+                <div class="stat-info">
+                    <h3>120+</h3>
+                    <p>Luxury Rooms</p>
+                </div>
+            </div>
+            <div class="stat">
+                <i class="fas fa-users"></i>
+                <div class="stat-info">
+                    <h3>50K+</h3>
+                    <p>Happy Guests</p>
+                </div>
+            </div>
+            <div class="stat">
+                <i class="fas fa-star"></i>
+                <div class="stat-info">
+                    <h3>4.9</h3>
+                    <p>Guest Rating</p>
+                </div>
+            </div>
+            <div class="stat">
+                <i class="fas fa-award"></i>
+                <div class="stat-info">
+                    <h3>15+</h3>
+                    <p>Awards Won</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="welcome-section">
+            <div class="welcome-image">
+                <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800" alt="Hotel lobby">
+                <div class="experience-badge">
+                    <span>25+</span>
+                    <p>Years of<br>Excellence</p>
+                </div>
+            </div>
+            <div class="welcome-content">
+                <div class="section-tag">Welcome to Aurelia Grand</div>
+                <h2>A polished blend of <span>comfort</span> and <span>elegance</span></h2>
+                <p>From our softly lit lobby to our award-winning restaurant, every detail is crafted to feel elevated, relaxed, and unmistakably memorable.</p>
+                <div class="welcome-features">
+                    <div class="w-feature">
+                        <i class="fas fa-wifi"></i>
+                        <div>
+                            <h4>Fast Wi-Fi</h4>
+                            <p>Stay connected in every corner.</p>
+                        </div>
+                    </div>
+                    <div class="w-feature">
+                        <i class="fas fa-swimming-pool"></i>
+                        <div>
+                            <h4>Infinity Pool</h4>
+                            <p>Rooftop views with a calm breeze.</p>
+                        </div>
+                    </div>
+                    <div class="w-feature">
+                        <i class="fas fa-spa"></i>
+                        <div>
+                            <h4>Signature Spa</h4>
+                            <p>Restore yourself with luxe rituals.</p>
+                        </div>
+                    </div>
+                    <div class="w-feature">
+                        <i class="fas fa-concierge-bell"></i>
+                        <div>
+                            <h4>24/7 Concierge</h4>
+                            <p>Assistance whenever you need it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="featured-rooms">
+            <div class="section-header">
+                <div class="section-tag">Signature Stays</div>
+                <h2>Featured <span>Suites</span></h2>
+                <p>Choose from beautifully appointed rooms designed for comfort, style, and a peaceful retreat.</p>
+            </div>
+            <div class="rooms-preview" id="roomsPreview"></div>
+        </div>
+
+        <div class="highlights-section">
+            <div class="section-header">
+                <div class="section-tag">Hotel Moments</div>
+                <h2>What makes <span>Aurelia</span> unforgettable</h2>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-mug-hot"></i>
+                    <h3>Sunrise Breakfast</h3>
+                    <p>Fresh pastries, artisan coffee, and scenic terrace views.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-glass-cheers"></i>
+                    <h3>Rooftop Lounge</h3>
+                    <p>Evening cocktails and live jazz under the stars.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Private Transfers</h3>
+                    <p>Seamless airport pickup and in-hotel assistance.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="recent-stays">
+            <div class="section-header">
+                <div class="section-tag">Sample Arrivals</div>
+                <h2>Recent <span>Guest Stories</span></h2>
+            </div>
+            <div id="recentStays" class="recent-stays-grid"></div>
+        </div>
+
+        <div class="testimonials">
+            <div class="section-header">
+                <div class="section-tag">Guest Reviews</div>
+                <h2>What Our <span>Guests Say</span></h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>“The atmosphere felt luxurious from the moment we walked in. Every detail was elegant and effortless.”</p>
+                    <div class="testimonial-author">
+                        <div class="avatar avatar-rs">RS</div>
+                        <div>
+                            <h4>Rahul Sharma</h4>
+                            <p>Business Traveler</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>“The rooftop lounge and fine dining experience were outstanding. It felt truly special.”</p>
+                    <div class="testimonial-author">
+                        <div class="avatar avatar-pp">PP</div>
+                        <div>
+                            <h4>Priya Patel</h4>
+                            <p>Food Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>“Comfortable suites, warm hospitality, and a beautiful atmosphere. We loved every second.”</p>
+                    <div class="testimonial-author">
+                        <div class="avatar avatar-ak">AK</div>
+                        <div>
+                            <h4>Amit Kumar</h4>
+                            <p>Vacationer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="section">
+        <div class="page-header">
+            <div class="section-tag">Reservations</div>
+            <h2>Book Your <span>Stay</span></h2>
+            <p>Reserve your room in just a few simple steps.</p>
+        </div>
+        <div class="booking-wrapper">
+            <div class="booking-info">
+                <div class="booking-info-card">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Easy Booking</h3>
+                    <p>Simple and secure reservation process.</p>
+                </div>
+                <div class="booking-info-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Best Price Guarantee</h3>
+                    <p>Book directly for the most competitive rates.</p>
+                </div>
+                <div class="booking-info-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Our team is always ready to assist.</p>
+                </div>
+            </div>
+            <form id="bookingForm" class="booking-form">
+                <h3><i class="fas fa-hotel"></i> Reservation Details</h3>
+                <div class="form-group">
+                    <label for="name"><i class="fas fa-user"></i> Full Name</label>
+                    <input type="text" id="name" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+                    <input type="tel" id="phone" required placeholder="Enter your phone number">
+                </div>
+                <div class="form-group">
+                    <label for="address"><i class="fas fa-map-marker-alt"></i> Address</label>
+                    <input type="text" id="address" required placeholder="Enter your address">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkin"><i class="fas fa-sign-in-alt"></i> Check-In</label>
+                        <input type="text" id="checkin" required placeholder="DD/MM/YYYY">
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout"><i class="fas fa-sign-out-alt"></i> Check-Out</label>
+                        <input type="text" id="checkout" required placeholder="DD/MM/YYYY">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="room_type"><i class="fas fa-bed"></i> Room Type</label>
+                    <select id="room_type" required>
+                        <option value="">Select Room Type</option>
+                        <option value="standard_non_ac">Standard Non-AC - Rs. 3,500/night</option>
+                        <option value="standard_ac">Standard AC - Rs. 4,000/night</option>
+                        <option value="three_bed_non_ac">3-Bed Non-AC - Rs. 4,500/night</option>
+                        <option value="three_bed_ac">3-Bed AC - Rs. 5,000/night</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-gold btn-full">
+                    <i class="fas fa-check-circle"></i> Confirm Booking
+                </button>
+            </form>
+        </div>
+        <div id="bookingResult" class="result-box"></div>
+    </section>
+
+    <section id="rooms" class="section">
+        <div class="page-header">
+            <div class="section-tag">Accommodations</div>
+            <h2>Our <span>Rooms</span> & Suites</h2>
+            <p>Discover the perfect room for your stay.</p>
+        </div>
+        <div id="roomsInfo" class="rooms-grid"></div>
+    </section>
+
+    <section id="restaurant" class="section">
+        <div class="page-header">
+            <div class="section-tag">Fine Dining</div>
+            <h2>Restaurant <span>Menu</span></h2>
+            <p>Experience culinary excellence with our diverse menu.</p>
+        </div>
+        <div class="restaurant-banner">
+            <div class="restaurant-banner-content">
+                <i class="fas fa-utensils"></i>
+                <h3>Aurelia Grand Restaurant</h3>
+                <p>Open Daily: 7:00 AM - 11:00 PM</p>
+            </div>
+        </div>
+        <div class="restaurant-order">
+            <div class="form-group">
+                <label for="custId"><i class="fas fa-id-card"></i> Customer ID</label>
+                <input type="number" id="custId" placeholder="Enter your customer ID">
+            </div>
+        </div>
+        <div class="menu-container">
+            <div class="menu-category">
+                <div class="menu-cat-header">
+                    <i class="fas fa-coffee"></i>
+                    <h3>Beverages</h3>
+                </div>
+                <div class="menu-items">
+                    <label><input type="checkbox" value="1"> <span>Regular Tea</span> <b>Rs. 20</b></label>
+                    <label><input type="checkbox" value="2"> <span>Masala Tea</span> <b>Rs. 25</b></label>
+                    <label><input type="checkbox" value="3"> <span>Coffee</span> <b>Rs. 25</b></label>
+                    <label><input type="checkbox" value="4"> <span>Cold Drink</span> <b>Rs. 25</b></label>
+                    <label><input type="checkbox" value="5"> <span>Bread Butter</span> <b>Rs. 30</b></label>
+                    <label><input type="checkbox" value="6"> <span>Bread Jam</span> <b>Rs. 30</b></label>
+                    <label><input type="checkbox" value="7"> <span>Veg. Sandwich</span> <b>Rs. 50</b></label>
+                    <label><input type="checkbox" value="8"> <span>Veg. Toast Sandwich</span> <b>Rs. 50</b></label>
+                    <label><input type="checkbox" value="9"> <span>Cheese Toast Sandwich</span> <b>Rs. 70</b></label>
+                    <label><input type="checkbox" value="10"> <span>Grilled Sandwich</span> <b>Rs. 70</b></label>
+                </div>
+            </div>
+            <div class="menu-category">
+                <div class="menu-cat-header">
+                    <i class="fas fa-soup"></i>
+                    <h3>Soups</h3>
+                </div>
+                <div class="menu-items">
+                    <label><input type="checkbox" value="11"> <span>Tomato Soup</span> <b>Rs. 110</b></label>
+                    <label><input type="checkbox" value="12"> <span>Hot & Sour</span> <b>Rs. 110</b></label>
+                    <label><input type="checkbox" value="13"> <span>Veg. Noodle Soup</span> <b>Rs. 110</b></label>
+                    <label><input type="checkbox" value="14"> <span>Sweet Corn</span> <b>Rs. 110</b></label>
+                    <label><input type="checkbox" value="15"> <span>Veg. Munchow</span> <b>Rs. 110</b></label>
+                </div>
+            </div>
+            <div class="menu-category">
+                <div class="menu-cat-header">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Main Course</h3>
+                </div>
+                <div class="menu-items">
+                    <label><input type="checkbox" value="16"> <span>Shahi Paneer</span> <b>Rs. 110</b></label>
+                    <label><input type="checkbox" value="17"> <span>Kadai Paneer</span> <b>Rs. 110</b></label>
+                    <label><input type="checkbox" value="18"> <span>Handi Paneer</span> <b>Rs. 120</b></label>
+                    <label><input type="checkbox" value="19"> <span>Palak Paneer</span> <b>Rs. 120</b></label>
+                    <label><input type="checkbox" value="20"> <span>Chilli Paneer</span> <b>Rs. 140</b></label>
+                    <label><input type="checkbox" value="21"> <span>Matar Mushroom</span> <b>Rs. 140</b></label>
+                    <label><input type="checkbox" value="22"> <span>Mix Veg</span> <b>Rs. 140</b></label>
+                    <label><input type="checkbox" value="23"> <span>Jeera Aloo</span> <b>Rs. 140</b></label>
+                    <label><input type="checkbox" value="24"> <span>Malai Kofta</span> <b>Rs. 140</b></label>
+                    <label><input type="checkbox" value="25"> <span>Aloo Matar</span> <b>Rs. 140</b></label>
+                    <label><input type="checkbox" value="26"> <span>Dal Fry</span> <b>Rs. 140</b></label>
+                    <label><input type="checkbox" value="27"> <span>Dal Makhani</span> <b>Rs. 150</b></label>
+                    <label><input type="checkbox" value="28"> <span>Dal Tadka</span> <b>Rs. 150</b></label>
+                </div>
+            </div>
+            <div class="menu-category">
+                <div class="menu-cat-header">
+                    <i class="fas fa-bread-slice"></i>
+                    <h3>Roti</h3>
+                </div>
+                <div class="menu-items">
+                    <label><input type="checkbox" value="29"> <span>Plain Roti</span> <b>Rs. 15</b></label>
+                    <label><input type="checkbox" value="30"> <span>Butter Roti</span> <b>Rs. 15</b></label>
+                    <label><input type="checkbox" value="31"> <span>Tandoori Roti</span> <b>Rs. 20</b></label>
+                    <label><input type="checkbox" value="32"> <span>Butter Naan</span> <b>Rs. 20</b></label>
+                </div>
+            </div>
+            <div class="menu-category">
+                <div class="menu-cat-header">
+                    <i class="fas fa-bowl-rice"></i>
+                    <h3>Rice</h3>
+                </div>
+                <div class="menu-items">
+                    <label><input type="checkbox" value="33"> <span>Plain Rice</span> <b>Rs. 90</b></label>
+                    <label><input type="checkbox" value="34"> <span>Jeera Rice</span> <b>Rs. 90</b></label>
+                    <label><input type="checkbox" value="35"> <span>Veg Pulao</span> <b>Rs. 110</b></label>
+                    <label><input type="checkbox" value="36"> <span>Peas Pulao</span> <b>Rs. 110</b></label>
+                </div>
+            </div>
+            <div class="menu-category">
+                <div class="menu-cat-header">
+                    <i class="fas fa-leaf"></i>
+                    <h3>South Indian</h3>
+                </div>
+                <div class="menu-items">
+                    <label><input type="checkbox" value="37"> <span>Plain Dosa</span> <b>Rs. 100</b></label>
+                    <label><input type="checkbox" value="38"> <span>Onion Dosa</span> <b>Rs. 110</b></label>
+                    <label><input type="checkbox" value="39"> <span>Masala Dosa</span> <b>Rs. 130</b></label>
+                    <label><input type="checkbox" value="40"> <span>Paneer Dosa</span> <b>Rs. 130</b></label>
+                    <label><input type="checkbox" value="41"> <span>Rice Idli</span> <b>Rs. 130</b></label>
+                    <label><input type="checkbox" value="42"> <span>Sambhar Vada</span> <b>Rs. 140</b></label>
+                </div>
+            </div>
+            <div class="menu-category">
+                <div class="menu-cat-header">
+                    <i class="fas fa-ice-cream"></i>
+                    <h3>Ice Cream</h3>
+                </div>
+                <div class="menu-items">
+                    <label><input type="checkbox" value="43"> <span>Vanilla</span> <b>Rs. 60</b></label>
+                    <label><input type="checkbox" value="44"> <span>Strawberry</span> <b>Rs. 60</b></label>
+                    <label><input type="checkbox" value="45"> <span>Pineapple</span> <b>Rs. 60</b></label>
+                    <label><input type="checkbox" value="46"> <span>Butter Scotch</span> <b>Rs. 60</b></label>
+                </div>
+            </div>
+        </div>
+        <div class="order-summary">
+            <button class="btn-gold" onclick="placeOrder()">
+                <i class="fas fa-shopping-cart"></i> Place Order
+            </button>
+        </div>
+        <div id="restaurantResult" class="result-box"></div>
+    </section>
+
+    <section id="payment" class="section">
+        <div class="page-header">
+            <div class="section-tag">Billing</div>
+            <h2>Make <span>Payment</span></h2>
+            <p>View your bill and complete your payment securely.</p>
+        </div>
+        <div class="payment-wrapper">
+            <div class="payment-methods">
+                <h3>Accepted Payment Methods</h3>
+                <div class="payment-method">
+                    <i class="fab fa-cc-visa"></i>
+                    <span>Credit/Debit Card</span>
+                </div>
+                <div class="payment-method">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Paytm / PhonePe</span>
+                </div>
+                <div class="payment-method">
+                    <i class="fas fa-qrcode"></i>
+                    <span>UPI</span>
+                </div>
+                <div class="payment-method">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span>Cash</span>
+                </div>
+            </div>
+            <div class="payment-form">
+                <div class="form-group">
+                    <label for="payPhone"><i class="fas fa-phone"></i> Phone Number</label>
+                    <input type="tel" id="payPhone" placeholder="Enter registered phone number">
+                </div>
+                <button class="btn-gold btn-full" onclick="checkPayment()">
+                    <i class="fas fa-file-invoice-dollar"></i> Check Bill
+                </button>
+            </div>
+        </div>
+        <div id="paymentResult" class="result-box"></div>
+    </section>
+
+    <section id="records" class="section">
+        <div class="page-header">
+            <div class="section-tag">Management</div>
+            <h2>Hotel <span>Records</span></h2>
+            <p>View all guest bookings and payment status.</p>
+        </div>
+        <div class="records-toolbar">
+            <button class="btn-gold" onclick="loadRecords()">
+                <i class="fas fa-sync-alt"></i> Refresh Records
+            </button>
+        </div>
+        <div id="recordsTable" class="table-container"></div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i class="fas fa-crown"></i>
+                    <span>Aurelia <b>Grand</b></span>
+                </div>
+                <p>Luxury, comfort, and unforgettable hospitality from the moment you arrive.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#" data-section="booking">Book a Room</a>
+                <a href="#" data-section="rooms">Our Rooms</a>
+                <a href="#" data-section="restaurant">Restaurant</a>
+                <a href="#" data-section="payment">Payment</a>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Luxury Lane, City Center</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                <p><i class="fas fa-envelope"></i> info@aureliagrand.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Aurelia Grand Hotel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
