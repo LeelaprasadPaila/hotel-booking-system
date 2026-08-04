@@ -9,10 +9,10 @@ A modern and responsive **Flask-based Hotel Booking System** that provides a com
 ![Luxury Hotel Booking System](static/images/homepage.png)
 
 ---
-## 🔗 Project Links
+## 🔗 Project Repository
 
-- **Live Demo:** https://leelaprasadpaila.github.io/hotel-booking-system/
-- **GitHub Repository:** https://github.com/LeelaprasadPaila/hotel-booking-system/
+**GitHub Repository**
+- https://github.com/LeelaprasadPaila/hotel-booking-system/
 
 ---
 
